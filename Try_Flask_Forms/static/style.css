@@ -1,0 +1,46 @@
+.login-form{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #ECEFCA;
+    color: #547792;
+    border-radius: 15%;
+    margin-left: 37%;
+    margin-right: 37%;
+    margin-top: 5%;
+    padding: 30px;
+}
+
+.header{
+    text-align: center;
+    font-size: 30px;
+    color: #213448;
+    margin: 0;
+    background-color: #94B4C1;
+    width: 100%;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #213448;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.username, .email, .password, .confirm{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.submit{
+    width: 100%;
+    background-color: #213448;
+    border-radius: 5px;
+    color: #ECEFCA;
+    padding: 10px;
+    border: none;
+}
