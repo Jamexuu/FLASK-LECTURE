@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block content %}
+    <form action="/order" method="POST">
+        <select name="drink">
+            <option value="">Choose a drink</option>
+            <option value="coffee">Coffee</option>
+            <option value="decaf">Decaf</option>
+        </select>
+        
+        <input type="submit" value="Submit">
+    </form>
+{% endblock content %}
