@@ -3,7 +3,12 @@
         "user0": {
             "username": "Jameson",
             "email": "jameson@gmail.com",
-            "password": "akosijames"
+            "password": "james1234"
+        },
+        "user2": {
+            "username": "kened",
+            "email": "ken@gmail.com",
+            "password": "ken12345"
         }
     }
 }

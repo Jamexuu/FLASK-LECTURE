@@ -15,18 +15,10 @@ def home():
 def register():
     form = RegistrationForm()
     if request.method == 'POST' and form.validate_on_submit():
-        counter = 0
-        user_id = f"user{counter}"
-        new_data = {
-            user_id: {
-                'username': form.username.data,
-                'email': form.email.data,
-                'password': form.password.data
-            }
-        }
+        path ='Try_Flask_Forms/user.json'
 
-        if os.path.exists('Try_Flask_Forms/user.json'):
-            with open('Try_Flask_Forms/user.json', 'r') as f:
+        if os.path.exists(path):
+            with open(path, 'r') as f:
                 try:
                     data = json.load(f)
                 except json.JSONDecodeError:
@@ -34,12 +26,19 @@ def register():
         else:
             data = {"users": {}}
 
-        data["users"][user_id] = new_data[user_id]
+       # Generate a unique user ID
+        user_id = f"user{len(data['users']) + 1}"
 
-        with open('Try_Flask_Forms/user.json', 'w') as f:
+        # Add the new user to the dictionary
+        data["users"][user_id] = {
+            'username': form.username.data,
+            'email': form.email.data,
+            'password': form.password.data
+        }
+
+        with open(path, 'w') as f:
             json.dump(data, f, indent=4)
         
-        counter += 1
         return redirect(url_for('success'))
 
     return render_template('login_form.html', form=form)  
